@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.scss": "scss",
+        "*.sql": "sql",
+        "type_traits": "cpp"
+    }
+}
