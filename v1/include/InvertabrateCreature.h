@@ -2,7 +2,7 @@
 #include "SeaCreature.h"
 #ifndef INVERTABRATE_CREATURE_HPP
 #define INVERTABRATE_CREATURE_HPP
-class InvertabrateCreature : SeaCreature
+class InvertabrateCreature : public SeaCreature
 {
   private:
   std::string _name{}; 

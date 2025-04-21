@@ -1,0 +1,10 @@
+name,min_size_cm,max_size_cm,daily_bag_limit,possession_limit,is_protected,notes
+Abalone,11.7,-,2,4,false,Blacklip only
+Blue Swimmer Crab,6,-,10,20,false,Measured across carapace
+Eastern Rock Lobster,10.4,-,2,4,false,Measured from rear of eye socket to end of carapace
+Octopus,-,-,10,20,false,-
+Pipi,-,-,50,100,false,Only for bait; not for consumption
+Sea Urchin,-,-,10,20,false,-
+"Squid (Southern Calamari, etc.)",-,-,20,40,false,-
+Giant Cuttlefish,15,-,10,20,false,Measured mantle length
+Eastern School Prawn,-,-,20,40,false,Measured raw

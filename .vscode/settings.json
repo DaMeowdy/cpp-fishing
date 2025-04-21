@@ -3,5 +3,6 @@
         "*.scss": "scss",
         "*.sql": "sql",
         "iostream": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

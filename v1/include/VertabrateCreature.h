@@ -2,7 +2,7 @@
 #define VERTABRATECREATURE_H
 #include <string>
 #include "SeaCreature.h"
-class VertabrateCreature: SeaCreature
+class VertabrateCreature: public SeaCreature
 {
   protected:
   // add mediator here

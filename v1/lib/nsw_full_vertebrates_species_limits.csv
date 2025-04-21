@@ -1,0 +1,11 @@
+name,min_size_cm,max_size_cm,daily_bag_limit,possession_limit,is_protected,notes
+Australian Salmon,30,-,5,10,false,-
+Bream (Yellowfin & Black),25,-,10,20,false,-
+Flathead (Dusky),36,70,5,10,false,Only 1 over 70 cm
+Flathead (other species),30,-,10,20,false,-
+Luderick,27,-,10,20,false,-
+Mulloway,70,-,1,2,false,-
+Tailor,30,-,10,20,false,-
+Snapper,30,-,10,20,false,Only 1 over 70 cm
+Yellowtail Kingfish,65,85,5,10,false,Only 2 over 85 cm
+Grey Nurse Shark,-,-,0,0,true,Protected species – must not be taken

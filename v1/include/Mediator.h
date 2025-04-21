@@ -1,15 +1,10 @@
 #include <string>
-#include "SeaCreatureFactory.h"
+#include "SeaCreature.h"
 #ifndef MEDIATOR 
 #define MEDIATOR
 class Mediator 
 {
-  void Notify(void* sender, std::string event_code) const;
-  void SetFactory(SeaCreatureFactory* factory);
-  private:
-  SeaCreatureFactory* _factory;
-  void* app;
-  void* checker;
-
+  public:
+  virtual void Notify(void* sender, std::string event_code, SeaCreature *object) =0;
 };
 #endif
