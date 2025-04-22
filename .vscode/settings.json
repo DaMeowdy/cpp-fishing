@@ -1,8 +1,9 @@
 {
     "files.associations": {
-        "*.scss": "scss",
-        "*.sql": "sql",
-        "iostream": "cpp"
+      "*.scss": "scss",
+      "*.sql": "sql",
+      "iostream": "cpp",
+      "iosfwd": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
