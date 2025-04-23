@@ -1,6 +1,7 @@
 #include "SeaCreature.cpp"
 #include "Mediator.cpp"
 #include "InvertabrateChecker.cpp"
+#include "VertabrateChecker.cpp"
 #include <iostream>
 #ifndef ENGINE
 #define ENGINE
@@ -12,10 +13,12 @@ class SeaPlusPlusEngine: public Mediator
   void NotifyVertabrate(void* sender, std::string message, VertabrateCreature* object) override;
   void SetUpCreature(SeaCreature* creature);
   void SetUpInvertabrateChecker(InvertabrateChecker* invertabrate_checker);
+  void SetUpVertabrateChecker(VertabrateChecker* vertabrate_checker);
   void CleanUp();
   protected:
   SeaCreature* creature;
   InvertabrateChecker* invertabrate_checker;
+  VertabrateChecker* vertabrate_checker;
 };
 #endif
 void SeaPlusPlusEngine::SetUpCreature(SeaCreature* creature)
@@ -27,10 +30,16 @@ void SeaPlusPlusEngine::SetUpInvertabrateChecker(InvertabrateChecker* invertabra
   this->invertabrate_checker = invertabrate_checker;
   this->invertabrate_checker->LoadRules();
 }
+void SeaPlusPlusEngine::SetUpVertabrateChecker(VertabrateChecker* vertabrate_checker)
+{
+  this->vertabrate_checker = vertabrate_checker;
+  this->vertabrate_checker->LoadRules();
+}
 void SeaPlusPlusEngine::CleanUp()
 {
   delete this->creature;
   delete this->invertabrate_checker;
+  delete this->vertabrate_checker;
 }
 void SeaPlusPlusEngine::NotifyInvertabrate(void* sender, std::string message, InvertabrateCreature* object) 
 {
@@ -52,27 +61,27 @@ void SeaPlusPlusEngine::NotifyInvertabrate(void* sender, std::string message, In
   {
     if(message=="VALID")
     {
-
+      std::cout << "KEEP";
     }
     else if(message=="INVALID::NF")
     {
-
+      std::cout << "RELEASE";
     }
     else if(message == "INVALID::SIZE")
     {
-
+      std::cout << "RELEASE";
     }
     else if(message=="INVALID::QTY")
     {
-
+      std::cout << "RELEASE";
     }
     else if(message=="INVALID::EGGS")
     {
-
+      std::cout << "RELEASE";
     }
     else
     {
-      
+      std::cout << "RELEASE";
     }
   }
 }

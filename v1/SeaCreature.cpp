@@ -33,7 +33,6 @@ InvertabrateCreature* SeaCreature::CreatureInvertabrateCreature(std::string name
   creature.qty = qty;
   if(this->mediator==nullptr)
   {
-    this->mediator->NotifyInvertabrate(this, "NO MEDIATOR", nullptr);
     return nullptr;
   }
   
