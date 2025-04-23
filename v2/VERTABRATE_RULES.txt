@@ -1,0 +1,70 @@
+Australian Bass, Australian Bass,35,1
+Estuary Perch, Estuary Perch, 35,1
+Australian Salmon, Australian Salmon, 9999, 5
+Blue Drummer, Blue Drummer, 9999,0
+Bonito,Bonito,9999,10
+Bream and Tarwhine,Bream(Black/Southern),25,10
+Bream and Tarwhine,Bream(Yellowfin),25,10
+Bream and Tarwhine,Tarwhine,20,10
+Cobia, Cobia, 9999,5 
+Deep-sea Fish,Hapuku,9999,5
+Deep-sea Fish,Banded Rock Cod,9999,5
+Deep-sea Fish,Bass Groper,9999,5
+Deep-sea Fish,Gemfish,9999,2
+Deep-sea Fish,Blue-eye Travalla,9999,5
+Dogfish,Dogfish,9999,9999
+Dogfish,Harrison's,9999,0
+Dogfish,Southern,9999,0
+Dogfish,All Other,9999,2
+Eastern Blue Groper,Eastern Blue Groper,9999,0
+Mahi Mahi, Mahi Mahi, 60, 10
+Eels, Shortfin,30,10
+Eels, Longfin,58,10
+Flathead,Dusky Flathead,36,5
+Flathead,Blue Spotted,33,10
+Flathead,Tiger,33,10
+Flounder,Flounder,25,20
+Sole,Sole,0,20
+Garfish, Eastern Sea,9999,20
+Hairtail,Hairtail,9999,10
+Leatherjacket,Leatherjacket,9999,20
+Luderick,Luderick,27,10
+Mackerel,Spanish Mackerel,75,5
+Mackerel,Spotted Mackerel,60,5
+Mangrove Jack,Mangrove Jack,9999,5
+Marlin,Black Marlin,9999,1
+Marlin,Blue Marlin,9999,1
+Marlin,Striped Marlin,9999,1
+Morwong,Rubberlip Morwong,30,10
+Morwong,Jackass Morwong,30,10
+Morwong,Red Morwong,30,5
+Morwong,Banded Morwong,9999,5
+Moses Snapper,Moses Snapper,9999,5
+Mullet,Poddy Mullet,0,20
+Mullet,Bully,30,20
+Mulloway,Mulloway,70,1
+Pearl Perch, Pearl Perch,30,5
+Eastern Red Scorpionfish,Eastern Red Scorpionfish,9999,5
+Rock Blackfish,Rock Blackfish,30,10
+Sailfish,Sailfish,9999,1
+Samson,Samson,9999,5
+Amberjack,Amberjack,9999,5
+Sawtail,Sawtail,9999,5
+Sharks, Wobbegong Shark,9999,0
+Sharks, Mako Shark,9999,1
+Shark,Whaler Shark,9999,5
+Shark,School Shark,91,5
+Snapper,Snapper,30,10
+Spearfish,Shortbill Spearfish,9999,1
+Swordfish,Broadbill Swordfish,9999,1
+Tailor,Tailor,30,10
+Teraglin,Teraglin,38,5
+Trevallies,Silver Trevally,30,10
+Tuna,Yellowfin Tuna,90,5
+Tuna,Albacore Tuna,90,5
+Tuna,Bigeye Tuna,90,5
+Tuna,Longtail Tuna,90,5
+Tuna,Southern Bluefin Tuna,90,5
+Wahoo,Wahoo,9999,5
+Whiting, Sand Whiting, 27,20
+Kingfish, Yellow Kingfish,65,5
