@@ -1,6 +1,7 @@
 #include "Mediator.cpp"
 #include "InvertabrateCreature.cpp"
 #include "VertabrateCreature.cpp"
+#include <iostream>
 #ifndef SEA_CREATURE
 #define SEA_CREATURE
 class SeaCreature 
@@ -9,7 +10,7 @@ class SeaCreature
   SeaCreature();
   void CleanUp();
   VertabrateCreature* CreateVertabrateCreature(std::string name, float size, int qty);
-  InvertabrateCreature* CreatureInvertabrateCreature(std::string name, float size, bool carrying_eggs, int qty);
+  InvertabrateCreature* CreateInvertabrateCreature(std::string name, float size, bool carrying_eggs, int qty);
   void SetMediator(Mediator* mediator);
   protected:
   Mediator* mediator;
@@ -28,10 +29,14 @@ void SeaCreature::CleanUp()
 {
   this->mediator = nullptr;
 }
-InvertabrateCreature* SeaCreature::CreatureInvertabrateCreature(std::string name, float size, bool carrying_eggs, int qty)
+InvertabrateCreature* SeaCreature::CreateInvertabrateCreature(std::string name, float size, bool carrying_eggs, int qty)
 {
+  if(!carrying_eggs)
+  {
+    carrying_eggs=false;
+  }
   InvertabrateCreature creature;
-  creature.name = name;
+  creature.name = name; 
   creature.size = size;
   creature.carrying_eggs = carrying_eggs;
   creature.qty = qty;

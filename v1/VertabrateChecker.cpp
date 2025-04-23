@@ -19,7 +19,6 @@ class VertabrateChecker: public SeaChecker
 std::unordered_map<std::string, std::vector<std::string>> VertabrateChecker::getSpecies()
 {
   std::unordered_map<std::string,std::vector<std::string>> map;
-  std::unordered_set<std::string> groups; 
   for(auto& [key, value]:this->rules)
   {
     if(map.find(value.Group)==map.end())

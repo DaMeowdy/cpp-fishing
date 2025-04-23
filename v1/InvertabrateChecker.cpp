@@ -3,6 +3,7 @@
 #include "Mediator.cpp"
 #include <fstream>
 #include <regex>
+#include <iostream>
 #ifndef INVERTABRATE_CHECKER
 #define INVERTABRATE_CHECKER
 class InvertabrateChecker: public SeaChecker
@@ -10,6 +11,7 @@ class InvertabrateChecker: public SeaChecker
   public:
   void LoadRules() override;
   void CleanUp() override;
+  std::unordered_map<std::string, std::vector<std::string>> getSpecies();
   void SetMediator(Mediator* mediator);
   bool CheckInvertabrateCreature(InvertabrateCreature* creature);
 
@@ -33,6 +35,7 @@ bool InvertabrateChecker::CheckInvertabrateCreature(InvertabrateCreature* creatu
 {
   if(creature->carrying_eggs==true)
   {
+    std::cout << creature->carrying_eggs;
     this->mediator->NotifyInvertabrate(this,"INVALID::EGGS",nullptr);
     return false;
   }
@@ -43,7 +46,15 @@ bool InvertabrateChecker::CheckInvertabrateCreature(InvertabrateCreature* creatu
   }
   auto NeededRule = this->rules[creature->name];
   bool valid_qty = creature->qty < NeededRule.Maximum_Qty;
-  bool valid_size = creature->size > NeededRule.Minimum_Size || NeededRule.Minimum_Size == 9999;
+  bool valid_size;
+  if(NeededRule.Minimum_Size ==9999)
+  {
+    valid_size = true;
+  }
+  else
+  {
+    valid_size = creature->size > NeededRule.Minimum_Size;
+  }
   if(valid_qty&&valid_size)
   {
     this->mediator->NotifyInvertabrate(this,"VALID",creature);
@@ -74,6 +85,22 @@ void InvertabrateChecker::LoadRules()
     rule.Maximum_Qty = std::stoi(split.at(3));
     this->rules[split.at(1)] = rule;
   }
+}
+std::unordered_map<std::string, std::vector<std::string>> InvertabrateChecker::getSpecies()
+{
+  std::unordered_map<std::string,std::vector<std::string>> map;
+  for(auto& [key, value]:this->rules)
+  {
+    if(map.find(value.Group)==map.end())
+    {
+      map[value.Group] = {key};
+    }
+    else
+    {
+      map[value.Group].push_back(key);
+    }
+  }
+  return map;
 }
 void InvertabrateChecker::CleanUp()
 {

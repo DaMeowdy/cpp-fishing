@@ -83,7 +83,53 @@ int App::AddVertabrates()
 }
 int App::AddInvertabrates()
 {
-  return 0;
+  this->ClearScreen();
+  std::unordered_map<std::string, std::vector<std::string>> map = this->invertabrate_checker.getSpecies();
+  int choice;
+  std::cout << "SELECT FROM FAMILIES : " <<std::endl;
+  std::unordered_map<int, std::vector<std::string>> choices;
+  int i = 1;
+  for(auto& [key, value]:map)
+  {
+    choices[i] = value;
+    std::cout << i << ". " << key << std::endl;
+    ++i;
+  }
+  std::cout << "CHOOSE GROUP > ";
+  std::cin >> choice;
+  this->ClearScreen();
+  int j = 1;
+  std::vector<std::string> fish_of_group;
+  for(auto& value:choices[choice])
+  {
+    fish_of_group.push_back(value);
+    std::cout << j << ". " << value << std::endl;
+    ++j;
+  }
+  std::cout << "CHOOSE FISH > ";
+  std::cin >> choice;
+  this->ClearScreen();
+  std::string chosen_fish = fish_of_group.at(choice-1);
+  int size; 
+  int qty;
+  bool carrying_eggs;
+  char yn;
+  std::cout << std::endl << "ENTER SIZE (in CM)> ";
+  std::cin >> size;
+  std::cout << std::endl << "ENTER QTY > ";
+  std::cin >> qty;
+  std::cout << std::endl << "Is carrying eggs? y/n > ";
+  std::cin >> yn;
+  yn = tolower(yn);
+  if(yn=='y')
+  {
+    carrying_eggs=true;
+  }
+  else if(yn=='n') {
+    carrying_eggs=false;
+  }
+  this->sea_creature.CreateInvertabrateCreature(chosen_fish,size,carrying_eggs,qty);
+  return choice;
 }
 int App::RunTimeLoop(bool isRunning)
 {
