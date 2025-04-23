@@ -8,7 +8,7 @@ class FishRules
   std::string Species;
   float Minimum_Size;
   int Maximum_Qty;
-  
+
 };
 
 #endif
