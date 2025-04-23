@@ -43,7 +43,7 @@ bool InvertabrateChecker::CheckInvertabrateCreature(InvertabrateCreature* creatu
   }
   auto NeededRule = this->rules[creature->name];
   bool valid_qty = creature->qty < NeededRule.Maximum_Qty;
-  bool valid_size = creature->size > NeededRule.Minimum_Size;
+  bool valid_size = creature->size > NeededRule.Minimum_Size || NeededRule.Minimum_Size == 9999;
   if(valid_qty&&valid_size)
   {
     this->mediator->NotifyInvertabrate(this,"VALID",creature);

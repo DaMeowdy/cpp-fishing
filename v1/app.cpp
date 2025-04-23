@@ -1,4 +1,5 @@
 #include "SeaPlusPlusEngine.cpp"
+#include <iostream>
 
 #ifndef APP
 #define APP
@@ -14,9 +15,60 @@ class App
   SeaCreature sea_creature;
   InvertabrateChecker invertabrate_checker;
   VertabrateChecker vertabrate_checker;
+  private:
+  int RunTimeLoop(bool isRunning);
+  int TakeBeginningInput();
+  int AddVertabrates();
+  int AddInvertabrates();
 };
 #endif
+int App::TakeBeginningInput()
+{
+  int choice;
+  std::cout << "OPTIONS :" << std::endl << "1. Add Vertabrate"<<std::endl << "2. Add Invertabrate" << "3. Exit" <<std::endl<<"Enter Selection > ";
+  std::cin >> choice;
+  switch (choice)
+  {
+  case 1:
+    return 1;
+  case 2:
+    return 2;
+  case 3:
+    return 0;
+  default:
+    std::cout << "Invalid Input" << choice << " ." << std::endl;
+    this->TakeBeginningInput();
+    break;
+  }
+  return 0;
+}
+int AddVertabrates()
+{
 
+}
+int AddInvertabrates()
+{
+
+}
+int App::RunTimeLoop(bool isRunning)
+{
+  if(!isRunning)
+    return 0;
+  int input = this->TakeBeginningInput();
+  switch(input)
+  {
+    case 1:
+      this->AddVertabrates();
+      break;
+    case 2:
+      this->AddInvertabrates();
+      break;
+    case 0:
+      isRunning = false;
+      break;
+  }
+  this->RunTimeLoop(isRunning);
+}
 void App::SetUp()
 {
   this->engine = SeaPlusPlusEngine();
@@ -29,7 +81,8 @@ void App::SetUp()
 }
 void App::Run()
 {
-
+  std::cout << "WELCOME TO SEAPLUSPLUS" << std::endl << "セアプラスプラスへようくそ";
+  RunTimeLoop(true);
 }
 void App::Cleanup()
 {

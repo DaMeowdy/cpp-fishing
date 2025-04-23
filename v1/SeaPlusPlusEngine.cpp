@@ -50,10 +50,10 @@ void SeaPlusPlusEngine::NotifyInvertabrate(void* sender, std::string message, In
       bool is_valid = this->invertabrate_checker->CheckInvertabrateCreature(object);
       if(is_valid)
       {
-        std::cout << "CREATURE VALID"; 
+        //Logic for bag
       }
       else {
-        std::cout << "CREATURE INVALID";
+        // Logic for bag
       }
     }
   }
@@ -91,8 +91,37 @@ void SeaPlusPlusEngine::NotifyVertabrate(void* sender, std::string message, Vert
   {
     if(message=="CREATED")
     {
-      // run checker
+      bool is_valid = this->vertabrate_checker->CheckVertabrateCreature(object);
+      if(is_valid)
+      {
+        //Logic for bag
+      }
+      else {
+        // Logic for bag
+      }
     }
   }
-
+  if(sender==this->vertabrate_checker)
+  {
+    if(message=="VALID")
+    {
+      std::cout << "KEEP";
+    }
+    else if(message=="INVALID::NF")
+    {
+      std::cout << "RELEASE";
+    }
+    else if(message == "INVALID::SIZE")
+    {
+      std::cout << "RELEASE";
+    }
+    else if(message=="INVALID::QTY")
+    {
+      std::cout << "RELEASE";
+    }
+    else
+    {
+      std::cout << "RELEASE";
+    }
+  }
 }

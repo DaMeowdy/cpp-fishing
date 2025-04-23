@@ -47,7 +47,6 @@ VertabrateCreature* SeaCreature::CreateVertabrateCreature(std::string name, floa
   creature.qty = qty;
   if(this->mediator==nullptr)
   {
-    this->mediator->NotifyVertabrate(this, "NO MEDIATOR", nullptr);
     return nullptr;
   }
   
