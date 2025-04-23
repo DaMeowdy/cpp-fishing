@@ -1,15 +1,16 @@
 #include "SeaPlusPlusEngine.cpp"
 #include <iostream>
-
+#include <unordered_map>
+#include <locale>
 #ifndef APP
 #define APP
 class App
 {
   public:
-  App();
   void SetUp();
   void Run();
   void Cleanup();
+  void ClearScreen();
   protected:
   SeaPlusPlusEngine engine;
   SeaCreature sea_creature;
@@ -25,7 +26,7 @@ class App
 int App::TakeBeginningInput()
 {
   int choice;
-  std::cout << "OPTIONS :" << std::endl << "1. Add Vertabrate"<<std::endl << "2. Add Invertabrate" << "3. Exit" <<std::endl<<"Enter Selection > ";
+  std::cout <<std::endl<< "OPTIONS :" << std::endl << "1. Add Vertabrate"<<std::endl << "2. Add Invertabrate" <<std::endl<< "3. Exit" <<std::endl<<"Enter Selection > ";
   std::cin >> choice;
   switch (choice)
   {
@@ -42,13 +43,47 @@ int App::TakeBeginningInput()
   }
   return 0;
 }
-int AddVertabrates()
+int App::AddVertabrates()
 {
-
+  this->ClearScreen();
+  std::unordered_map<std::string, std::vector<std::string>> map = this->vertabrate_checker.getSpecies();
+  int choice;
+  std::cout << "SELECT FROM FAMILIES : " <<std::endl;
+  std::unordered_map<int, std::vector<std::string>> choices;
+  int i = 1;
+  for(auto& [key, value]:map)
+  {
+    choices[i] = value;
+    std::cout << i << ". " << key << std::endl;
+    ++i;
+  }
+  std::cout << "CHOOSE GROUP > ";
+  std::cin >> choice;
+  this->ClearScreen();
+  int j = 1;
+  std::vector<std::string> fish_of_group;
+  for(auto& value:choices[choice])
+  {
+    fish_of_group.push_back(value);
+    std::cout << j << ". " << value << std::endl;
+    ++j;
+  }
+  std::cout << "CHOOSE FISH > ";
+  std::cin >> choice;
+  this->ClearScreen();
+  std::string chosen_fish = fish_of_group.at(choice-1);
+  int size; 
+  int qty;
+  std::cout << std::endl << "ENTER SIZE (in CM)> ";
+  std::cin >> size;
+  std::cout << std::endl << "ENTER QTY > ";
+  std::cin >> qty;
+  this->sea_creature.CreateVertabrateCreature(chosen_fish,size,qty);
+  return choice;
 }
-int AddInvertabrates()
+int App::AddInvertabrates()
 {
-
+  return 0;
 }
 int App::RunTimeLoop(bool isRunning)
 {
@@ -68,6 +103,7 @@ int App::RunTimeLoop(bool isRunning)
       break;
   }
   this->RunTimeLoop(isRunning);
+  return 0;
 }
 void App::SetUp()
 {
@@ -81,8 +117,14 @@ void App::SetUp()
 }
 void App::Run()
 {
-  std::cout << "WELCOME TO SEAPLUSPLUS" << std::endl << "セアプラスプラスへようくそ";
+  std::string japanese =  "Seapurasupurasu e youkuso";
+  std::cout << "WELCOME TO SEAPLUSPLUS" << std::endl;
+  std::cout << japanese << std::endl;
   RunTimeLoop(true);
+}
+void App::ClearScreen()
+{
+  std::cout <<  "\033[2J\033[1;1H";
 }
 void App::Cleanup()
 {

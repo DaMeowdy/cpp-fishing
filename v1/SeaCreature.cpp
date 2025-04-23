@@ -16,6 +16,10 @@ class SeaCreature
 
 };
 #endif
+void SeaCreature::SetMediator(Mediator* mediator)
+{
+  this->mediator=mediator;
+}
 SeaCreature::SeaCreature()
 {
   this->mediator = nullptr;

@@ -22,7 +22,7 @@ std::unordered_map<std::string, std::vector<std::string>> VertabrateChecker::get
   std::unordered_set<std::string> groups; 
   for(auto& [key, value]:this->rules)
   {
-    if(map.find(value.Group)!=map.end())
+    if(map.find(value.Group)==map.end())
     {
       map[value.Group] = {key};
     }
