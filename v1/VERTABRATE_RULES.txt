@@ -1,0 +1,28 @@
+Bream,Bream and Tarwhine,25,10
+Flathead,Dusky Flathead,36,5
+Flathead,Other Flathead Species,30,10
+Tailor,Tailor,30,10
+Luderick,Luderick,27,10
+Trevallies,Trevallies,30,10
+Bonito,Bonito,9999,10
+Dolphinfish,Mahi Mahi,60,10
+Morwong,Rubberlip Morwong,30,10
+Morwong,Jackass Morwong,30,10
+Marlin,Black Marlin,9999,1
+Marlin,Blue Marlin,9999,1
+Marlin,Striped Marlin,9999,1
+Swordfish,Broadbill Swordfish,9999,1
+Sailfish,Sailfish,9999,1
+Kingfish,Yellowtail Kingfish,65,5
+Pearl Perch,Pearl Perch,30,5
+Groper,Blue Groper,30,2
+Morwong,Other Morwong Species,30,10
+Snapper,Red Snapper,30,10
+Snapper,Other Snapper Species,30,10
+Mackerel,Spanish Mackerel,75,5
+Mackerel,Spotted Mackerel,60,5
+Tuna,Yellowfin Tuna,90,5
+Tuna,Other Tuna Species,90,5
+Shark,Whaler Sharks,100,1
+Shark,Other Shark Species,100,1
+Other,Unlisted Species,9999,20
