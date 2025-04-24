@@ -70,27 +70,27 @@ void SeaPlusPlusEngine::NotifyInvertabrate(void* sender, std::string message, In
   {
     if(message=="VALID")
     {
-      std::cout << "KEEP";
+      std::cout << "KEEP"<<std::endl;
     }
     else if(message=="INVALID::NF")
     {
-      std::cout << "RELEASE";
+      std::cout << "RELEASE"<<std::endl;
     }
     else if(message == "INVALID::SIZE")
     {
-      std::cout << "RELEASE";
+      std::cout << "RELEASE"<<std::endl;
     }
     else if(message=="INVALID::QTY")
     {
-      std::cout << "RELEASE";
+      std::cout << "RELEASE"<<std::endl;
     }
     else if(message=="INVALID::EGGS")
     {
-      std::cout << "RELEASE";
+      std::cout << "RELEASE"<<std::endl;
     }
     else
     {
-      std::cout << "RELEASE";
+      std::cout << "RELEASE" <<std::endl;
     }
   }
 }

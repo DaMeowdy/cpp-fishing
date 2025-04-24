@@ -28,8 +28,9 @@ class App
 int App::TakeBeginningInput()
 {
   int choice;
+  this->bag.PrintBag();
   std::cout << std::endl;
-  std::cout <<std::endl<< "OPTIONS :" << std::endl << "1. Add Vertabrate"<<std::endl << "2. Add Invertabrate" <<std::endl<< "3. Exit" <<std::endl<<"Enter Selection > ";
+  std::cout <<std::endl<< "OPTIONS :" << std::endl << "1. Add Vertabrate"<<std::endl << "2. Add Invertabrate" <<std::endl<< "3. Save Bag" << std::endl << "4. Load Bag" << std::endl << "5. Exit" <<std::endl<<"Enter Selection > ";
   std::cin >> choice;
   switch (choice)
   {
@@ -38,6 +39,10 @@ int App::TakeBeginningInput()
   case 2:
     return 2;
   case 3:
+    return 3;
+  case 4:
+    return 4;
+  case 5:
     return 0;
   default:
     std::cout << "Invalid Input" << choice << " ." << std::endl;
@@ -147,6 +152,14 @@ int App::RunTimeLoop(bool isRunning)
     case 2:
       this->AddInvertabrates();
       break;
+    case 3:
+      this->bag.SaveBag();
+      this->ClearScreen();
+      break;
+    case 4:
+      this->bag.ReadBag();
+      this->ClearScreen();
+      break;
     case 0:
       isRunning = false;
       break;
@@ -165,6 +178,7 @@ void App::SetUp()
   this->invertabrate_checker.SetMediator(&this->engine);
   this->vertabrate_checker.SetMediator(&this->engine);
   this->bag.SetMediator(&this->engine);
+  this->bag.ReadBag();
 }
 void App::Run()
 {

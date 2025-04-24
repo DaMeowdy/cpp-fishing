@@ -46,15 +46,32 @@ void Bag::CleanUp()
 void Bag::PrintBag()
 {
   std::cout << "INVERTABRATES"<<std::endl;
-  for(auto& invertabrate: this->invertabrate_bag)
+  if(this->invertabrate_bag.size() >=1)
   {
-    std::cout << invertabrate.ToFileString() << std::endl; 
+    for(int i = 0; i < this->invertabrate_bag.size()-1; ++i)
+    {
+      InvertabrateCreature invertabrate = this->invertabrate_bag.at(i);
+      std::cout << invertabrate.name << "," << invertabrate.size << "," << invertabrate.qty << std::endl;  
+    }
+  }
+  else
+  {
+    std::cout << std::endl <<"NO INVERTABRATES FOUND" << std::endl;
   }
   std::cout << "VERTABRATES" <<std::endl;
-  for(auto& vertabrate: this->invertabrate_bag)
+  if(this->vertabrate_bag.size() >=1)
   {
-    std::cout << vertabrate.ToFileString() << std::endl; 
+    for(int j = 0; j < this->vertabrate_bag.size()-1; ++j)
+    {
+      VertabrateCreature vertabrate = this->vertabrate_bag.at(j);
+      std::cout << vertabrate.name << "," << vertabrate.size << "," << vertabrate.qty << std::endl; 
+    }
   }
+  else
+  {
+    std::cout << std::endl <<"NO VERTABRATES FOUND" << std::endl;
+  }
+
 }
 void Bag::ReadBag()
 {
